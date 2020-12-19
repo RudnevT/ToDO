@@ -1,8 +1,8 @@
-package com.example.todo.data
+package com.example.todo_2.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.todo.model.Task
+import com.example.todo_2.model.Task
 
 @Dao
 interface TaskDao {
@@ -16,7 +16,7 @@ interface TaskDao {
     fun loadAllTasksByIds(tasksIds: Array<Int>): List<Task>
 
     @Query("SELECT * FROM Task WHERE scheduledDate LIKE :date")
-    fun getTodayTasksLiveData(date: String): LiveData<List<Task>>
+    fun getTodayTasksLiveData(date: Long): LiveData<List<Task>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(task: Task?)

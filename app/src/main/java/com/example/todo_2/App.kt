@@ -1,9 +1,9 @@
-package com.example.todo
+package com.example.todo_2
 
 import android.app.Application
 import androidx.room.Room
-import com.example.todo.data.AppDatabase
-import com.example.todo.data.TaskDao
+import com.example.todo_2.data.AppDatabase
+import com.example.todo_2.data.TaskDao
 
 
 class App : Application() {

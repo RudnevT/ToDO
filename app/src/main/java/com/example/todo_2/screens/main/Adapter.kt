@@ -1,4 +1,4 @@
-package com.example.todo.screens.main
+package com.example.todo_2.screens.main
 
 import android.app.Activity
 import android.view.LayoutInflater
@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SortedList
-import com.example.todo.App.Companion.instance
-import com.example.todo.R
-import com.example.todo.model.Task
-import com.example.todo.screens.create.TaskDetailsActivity
+import com.example.todo_2.App.Companion.instance
+import com.example.todo_2.R
+import com.example.todo_2.model.Task
+import com.example.todo_2.screens.create.TaskDetailsActivity
 
 class Adapter : RecyclerView.Adapter<Adapter.TaskViewHolder>() {
     private val sortedList

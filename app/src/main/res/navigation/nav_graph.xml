@@ -3,26 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
-
+    app:startDestination="@id/tasksFragment">
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.todo.screens.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/activity_task_details">
-
+        android:id="@+id/tasksFragment"
+        android:name="com.example.todo_2.screens.main.TasksFragment"
+        android:label="TasksFragment" >
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_tasksFragment_to_taskDetailsFragment2"
+            app:destination="@id/taskDetailsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.todo.screens.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/item_task_list">
-
+        android:id="@+id/taskDetailsFragment"
+        android:name="com.example.todo_2.screens.create.TaskDetailsFragment"
+        android:label="TaskDetailsFragment" >
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_taskDetailsFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
     </fragment>
 </navigation>

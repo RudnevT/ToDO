@@ -1,4 +1,4 @@
-package com.example.todo
+package com.example.todo_2
 
 import org.junit.Test
 
