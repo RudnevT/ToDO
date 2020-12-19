@@ -1,4 +1,4 @@
-package com.example.todo.screens.create
+package com.example.todo_2.screens.create
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -11,10 +11,10 @@ import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.todo.App.Companion.instance
-import com.example.todo.R
-import com.example.todo.model.Task
-import kotlinx.android.synthetic.main.activity_task_details.*
+import com.example.todo_2.App.Companion.instance
+import com.example.todo_2.R
+import com.example.todo_2.model.Task
+import kotlinx.android.synthetic.main.fragment_task_details.*
 import java.util.*
 
 class TaskDetailsActivity : AppCompatActivity()
@@ -40,7 +40,7 @@ class TaskDetailsActivity : AppCompatActivity()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_task_details)
+        setContentView(R.layout.fragment_task_details)
 
         picDate()
         picTime()
@@ -59,8 +59,8 @@ class TaskDetailsActivity : AppCompatActivity()
         if (intent.hasExtra(EXTRA_TASK)) {
             task = intent.getParcelableExtra(EXTRA_TASK)
             editText!!.setText(task!!.text)
-            dateDisplay!!.setText(task!!.scheduledDate)
-            timeDisplay!!.setText(task!!.scheduledTime)
+//            dateDisplay!!.setText(task!!.scheduledDate)
+//            timeDisplay!!.setText(task!!.scheduledTime)
         } else {
             task = Task()
         }
@@ -122,16 +122,14 @@ class TaskDetailsActivity : AppCompatActivity()
             R.id.action_save -> if (editText!!.text.isNotEmpty()) {
                 task!!.text = editText!!.text.toString()
                 task!!.timeStamp = System.currentTimeMillis()
-                task!!.scheduledDate = dateDisplay!!.text.toString()
-
+//                task!!.scheduledDate = dateDisplay!!.text.toString()
 //                //для теста
 //                Toast.makeText(this,dateDisplay!!.text.toString(), LENGTH_LONG).show()
 //                val sdf = SimpleDateFormat("dd.MM.yyyy")
 //                var date = sdf.format(Date())
 //                Toast.makeText(this,date, LENGTH_LONG).show()
 //                //конец теста
-
-                task!!.scheduledTime = timeDisplay!!.text.toString()
+//                task!!.scheduledTime = timeDisplay!!.text.toString()
                 if (intent.hasExtra(EXTRA_TASK)) {
                     instance!!.taskDao!!.update(task)
                 } else {

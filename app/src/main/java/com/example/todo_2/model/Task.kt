@@ -1,4 +1,4 @@
-package com.example.todo.model
+package com.example.todo_2.model
 
 import android.os.Parcelable
 import androidx.room.Entity
@@ -13,9 +13,9 @@ data class Task(
     var uid: Int = 0,
     var text: String? = null,
     var timeStamp: Long = System.currentTimeMillis(),
-    var scheduledTime: String? = null,
-    var scheduledDate: String? = null,
-    var done: Boolean = false  //for future option "completed"
+    var scheduledTime: Long? = null,
+    var scheduledDate: Long? = null,
+    var done: Boolean = false
 ) : Parcelable {
 
 }
